@@ -21,4 +21,6 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello from SaaS API!');
 });
 
+app.use('/api/auth', authRoutes);
+
 export default app;
