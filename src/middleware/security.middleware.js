@@ -5,10 +5,7 @@ const securityMiddleware = async (req, res, next) => {
   try {
     const isDev = process.env.NODE_ENV !== 'production';
 
-    // 🔵 DEV BYPASS for testing tools
-    const userAgent = req.get('User-Agent') || '';
-    const isPostman = userAgent.includes('PostmanRuntime');
-
+    // 🛡️ DEV BYPASS
     if (isDev) {
       console.log('🛡️ Arcjet Bypass Active (Dev Mode)');
       return next();
@@ -21,17 +18,9 @@ const securityMiddleware = async (req, res, next) => {
 
       if (reason.isBot?.()) {
         logger.warn('Bot blocked', { ip: req.ip });
-
         return res.status(403).json({
           error: 'Forbidden',
           message: 'Automated requests are not allowed',
-        });
-      }
-
-      if (reason.isShield?.()) {
-        return res.status(403).json({
-          error: 'Forbidden',
-          message: 'Request blocked by security policy',
         });
       }
 
@@ -46,10 +35,7 @@ const securityMiddleware = async (req, res, next) => {
     next();
   } catch (e) {
     console.error('Arcjet middleware error:', e);
-
-    res.status(500).json({
-      error: 'Internal server error',
-    });
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
