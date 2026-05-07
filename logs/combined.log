@@ -7,3 +7,12 @@
 {"level":"info","message":"User admin@gmail.com created successfully","service":"saas-api"}
 {"level":"info","message":"User registered successfully: admin@gmail.com","service":"saas-api"}
 {"level":"info","message":"::1 - - [06/May/2026:18:58:32 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 101 \"-\" \"PostmanRuntime/7.51.1\"","service":"saas-api"}
+{"level":"info","message":"User admin@gmail.com authenticated successfully","service":"saas-api"}
+{"level":"info","message":"User signed in successfully: admin@gmail.com","service":"saas-api"}
+{"level":"info","message":"::1 - - [07/May/2026:08:02:54 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 113 \"-\" \"PostmanRuntime/7.53.0\"","service":"saas-api"}
+{"level":"info","message":"User signed out successfully","service":"saas-api"}
+{"level":"info","message":"::1 - - [07/May/2026:08:04:16 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"PostmanRuntime/7.54.0\"","service":"saas-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"saas-api","userAgent":"PostmanRuntime/7.54.0"}
+{"level":"info","message":"::1 - - [07/May/2026:08:31:50 +0000] \"GET /health HTTP/1.1\" 403 68 \"-\" \"PostmanRuntime/7.54.0\"","service":"saas-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"saas-api","userAgent":"PostmanRuntime/7.54.0"}
+{"level":"info","message":"::1 - - [07/May/2026:08:31:56 +0000] \"GET /health HTTP/1.1\" 403 68 \"-\" \"PostmanRuntime/7.54.0\"","service":"saas-api"}
