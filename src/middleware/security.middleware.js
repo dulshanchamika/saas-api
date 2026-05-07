@@ -9,7 +9,7 @@ const securityMiddleware = async (req, res, next) => {
     const userAgent = req.get('User-Agent') || '';
     const isPostman = userAgent.includes('PostmanRuntime');
 
-    if (isDev && isPostman) {
+    if (isDev) {
       return next();
     }
 
